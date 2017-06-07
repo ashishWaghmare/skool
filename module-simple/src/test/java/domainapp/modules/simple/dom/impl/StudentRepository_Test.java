@@ -48,13 +48,13 @@ public class StudentRepository_Test {
     @Mock
     RepositoryService mockRepositoryService;
 
-    SimpleObjectRepository simpleObjectRepository;
+    StudentRepository studentRepository;
 
     @Before
     public void setUp() throws Exception {
-        simpleObjectRepository = new SimpleObjectRepository();
-        simpleObjectRepository.repositoryService = mockRepositoryService;
-        simpleObjectRepository.serviceRegistry = mockServiceRegistry;
+        studentRepository = new StudentRepository();
+        studentRepository.repositoryService = mockRepositoryService;
+        studentRepository.serviceRegistry = mockServiceRegistry;
     }
 
     public static class Create extends StudentRepository_Test {
@@ -78,7 +78,7 @@ public class StudentRepository_Test {
             });
 
             // when
-            final Student obj = simpleObjectRepository.create(someUid);
+            final Student obj = studentRepository.create(someUid);
 
             // then
             assertThat(obj).isNotNull();
@@ -116,7 +116,7 @@ public class StudentRepository_Test {
             });
 
             // when
-            final List<Student> list = simpleObjectRepository.listAll();
+            final List<Student> list = studentRepository.listAll();
 
             // then
             assertThat(list).isEqualTo(all);

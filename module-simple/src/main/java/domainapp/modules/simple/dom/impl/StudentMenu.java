@@ -46,7 +46,7 @@ public class StudentMenu {
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "1")
     public List<Student> listAll() {
-        return simpleObjectRepository.listAll();
+        return studentRepository.listAll();
     }
 
     @Action(semantics = SemanticsOf.SAFE)
@@ -55,7 +55,7 @@ public class StudentMenu {
     public List<Student> findByUid(
             @ParameterLayout(named = "Uid") final String uid
     ) {
-        return simpleObjectRepository.findByUid(uid);
+        return studentRepository.findByUid(uid);
     }
 
 
@@ -65,7 +65,7 @@ public class StudentMenu {
     public List<Student> findByName(
             @ParameterLayout(named = "Name") final String name
     ) {
-        return simpleObjectRepository.findByName(name);
+        return studentRepository.findByName(name);
     }
 
 
@@ -78,11 +78,11 @@ public class StudentMenu {
             @ParameterLayout(named = "Uid") final String uid,
             @ParameterLayout(named = "Name") final String name
     ) {
-        return simpleObjectRepository.create(uid,name);
+        return studentRepository.create(uid,name);
     }
 
 
     @javax.inject.Inject
-    SimpleObjectRepository simpleObjectRepository;
+    StudentRepository studentRepository;
 
 }

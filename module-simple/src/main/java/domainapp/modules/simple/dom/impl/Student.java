@@ -56,7 +56,7 @@ import lombok.Setter;
                         + "WHERE uid.indexOf(:uid) >= 0 ")
 })
 
-@javax.jdo.annotations.Unique(name="SimpleObject_name_UNQ", members = {"uid"})
+@javax.jdo.annotations.Unique(name="Student_id_UNQ", members = {"uid"})
 @DomainObject() // objectType inferred from @PersistenceCapable#schema
 public class Student implements Comparable<Student> {
 
